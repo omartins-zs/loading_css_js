@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <title>Loading CSS</title>
+
+    <style>
+        .loading-spinner-rolling-circle {
+            width: 200px;
+            height: 200px;
+            display: inline-block;
+            overflow: hidden;
+            background: transparent;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+        }
+
+        .loading-image div {
+            position: absolute;
+            width: 124px;
+            height: 124px;
+            border: 16px solid #e9505a;
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: loading-image 1s linear infinite;
+            top: 100px;
+            left: 100px;
+        }
+
+        @keyframes loading-image {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        .loading-image {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform: translateZ(0) scale(1);
+            backface-visibility: hidden;
+            transform-origin: 0 0;
+        }
+
+        .loading-image div {
+            box-sizing: content-box;
+        }
+
+        .loading-text {
+            position: fixed;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #0e1419;
+            font-size: 1.5rem;
+            z-index: 1001;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="loading-spinner-rolling-circle">
+        <div class="loading-image">
+            <div></div>
+        </div>
+    </div>
+    <div class="loading-text mt-4">Carregando informações...</div>
+</body>
+
+</html>
